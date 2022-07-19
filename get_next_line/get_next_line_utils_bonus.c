@@ -12,6 +12,8 @@
 
 #include "get_next_line_bonus.h"
 
+//since we only want to do anything until we find either the end of the string or a new line
+//we return if we find a \n or a \0
 size_t	ft_strlen(char *str)
 {
 	size_t	i;
@@ -26,6 +28,7 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
+//its a normal ft_strjoin but it frees the previous string if it exists and also stops copying if it finds a \n
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*ptr;
@@ -54,6 +57,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (ptr);
 }
 
+//this function is used to update our buffer for us to be able to call gnl function multiple times
 int	ft_update_file(char *buffer)
 {
 	int		i;
