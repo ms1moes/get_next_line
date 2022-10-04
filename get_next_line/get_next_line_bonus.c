@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msimoes- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: msimoes- <msimoes-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 16:35:57 by msimoes-          #+#    #+#             */
-/*   Updated: 2022/03/31 18:00:41 by msimoes-         ###   ########.fr       */
+/*   Updated: 2022/10/04 15:34:21 by msimoes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char	*get_next_line(int fd)
 {
-	static char	file[OPEN_MAX][BUFFER_SIZE + 1];
+	static char	file[FOPEN_MAX][BUFFER_SIZE + 1];
 	char		*line;
 	int			digit;
 
-	if (fd < 0 || BUFFER_SIZE < 1)
+	if (fd < 0 || BUFFER_SIZE < 1 || fd > FOPEN_MAX)
 		return (NULL);
 	line = 0;
 	digit = 1;
